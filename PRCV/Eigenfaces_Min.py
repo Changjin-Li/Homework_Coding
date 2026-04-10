@@ -68,10 +68,10 @@ def main():
     plt.plot(range(max_components), results)
     plt.xlabel("Number of Components")
     plt.ylabel("Diff")
-    plt.savefig(os.path.join(output_folder, "eigenfaces_min.png"))
     if index_min > -1:
         plt.axvline(x=index_min, color='r', linestyle='--')
         plt.axhline(y=results[index_min], color='r', linestyle='--')
+    plt.savefig(os.path.join(output_folder, "eigenfaces_min.png"))
     plt.show()
     print(f"Minimum components = {index_min}")
 

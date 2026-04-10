@@ -50,7 +50,7 @@ def main():
 
     canvas_h, canvas_w = height * 4, width * 4
     canvas = np.zeros((canvas_h, canvas_w, 3), dtype=np.uint8)
-    num_fisherfaces = min(16, eigenvectors.shape[1])
+    num_fisherfaces = min(eigenvectors.shape[1], 16)
     for i in range(num_fisherfaces):
         eigenvector = eigenvectors[:, i].reshape((height, -1))
         eigen_norm = norm_0_255(eigenvector)

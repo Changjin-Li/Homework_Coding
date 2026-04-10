@@ -61,7 +61,7 @@ def main():
             eigen_color_norm = norm_0_255(eigen_color)
             cv2.imwrite(os.path.join(output_folder, f"eigenface_{i}.png"), eigen_color_norm)
             canvas[(i // 5) * height : (i // 5 + 1) * height, (i % 5) * width : (i % 5 + 1) * width, :] = eigen_color_norm
-        print(f"特征值 #{i} = {eigenvalues[i][0]:.5f}")
+        print(f"Eigenvalue #{i} = {eigenvalues[i][0]:.5f}")
     cv2.imwrite(os.path.join(output_folder, "eigenfaces.png"), canvas)
 
     # Image Reconstruction
